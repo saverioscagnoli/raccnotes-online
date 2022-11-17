@@ -1,3 +1,5 @@
+import { useHotkeys } from "react-hotkeys-hook";
+
 const b = "**type here**";
 const i = "*type here*";
 const c = "<center>type here</center>";
@@ -13,6 +15,7 @@ export class Utils {
     this.text = text;
     this.setText = setText;
     this.build = () => document.getElementById("input") as HTMLTextAreaElement;
+    this.shortcuts();
   }
 
   public bold() {
@@ -61,5 +64,30 @@ export class Utils {
   public clear() {
     this.build().value = "";
     this.setText("");
+  }
+
+  public shortcuts() {
+    this._newShortcut("ctrl", "b", () => this.bold());
+    this._newShortcut("meta", "b", () => this.bold());
+    this._newShortcut("ctrl", "i", () => this.italic());
+    this._newShortcut("meta", "i", () => this.italic());
+    this._newShortcut("ctrl", "l", () => this.center());
+    this._newShortcut("meta", "l", () => this.center());
+    this._newShortcut("ctrl", "m", () => this.math());
+    this._newShortcut("meta", "m", () => this.math());
+    this._newShortcut("ctrl", "p", () => this.pageBreak());
+    this._newShortcut("meta", "p", () => this.pageBreak());
+  }
+
+  private _newShortcut(mainKey: string, key: string, exe: () => void) {
+    return useHotkeys(
+      `${mainKey}+${key}`,
+      (evt) => {
+        evt.preventDefault();
+        evt.stopImmediatePropagation();
+        exe();
+      },
+      { enableOnFormTags: ["TEXTAREA"] }
+    );
   }
 }

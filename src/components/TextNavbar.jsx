@@ -5,6 +5,7 @@ import { ImPageBreak } from "react-icons/im";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { Utils } from "../utils";
 
+
 function TextNavbar({ text, setText }) {
   const utils = new Utils(text, setText);
 
