@@ -13,6 +13,8 @@
     "@chakra-ui/react": "^2.4.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@react-three/drei": "^9.40.4",
+    "@react-three/fiber": "^8.9.1",
     "chakra-ui-markdown-renderer": "^4.1.0",
     "framer-motion": "^7.6.7",
     "jspdf": "^2.5.1",

@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Box>
-      <Navbar />
+      <Navbar text={text} setText={setText} />
       <Editor text={text} setText={setText} />
     </Box>
   );
