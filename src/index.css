@@ -1,0 +1,40 @@
+body {
+  overflow: hidden;
+}
+
+@media print {
+  *:not(span) {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  }
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+  .pagebreak {
+    page-break-after: always;
+  }
+
+  #navbar {
+    display: none;
+  }
+
+  #input {
+    display: none;
+  }
+
+  #output {
+    background-color: white;
+    border: none;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 18px;
+    color: black;
+    overflow: visible;
+  }
+}
